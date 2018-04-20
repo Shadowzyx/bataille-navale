@@ -1,3 +1,6 @@
+#ifndef MESSAGE_H
+#define MESSAGE_H
+
 typedef struct Boat {
     int x;
     int y;
@@ -53,3 +56,5 @@ typedef struct IncomingMessage {
     char nickname[255];
     s_strike strike;
 } s_incomingMessage;
+
+#endif
