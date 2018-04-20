@@ -3,7 +3,7 @@
 #ifndef CONNECTION_H
 #define CONNECTION_H
 
-int connexion(char* hostname, int portno)
+void connexion(char* hostname, int portno)
 {
 	int port = portno;
 	int sockfd = socket(AF_INET, SOCK_STREAM, 0);
@@ -40,7 +40,7 @@ int connexion(char* hostname, int portno)
 }
 
 
-int communiquer(int sockfd, char *buffer)
+void communiquer(int sockfd, char *buffer)
 {
     n = write(sockfd,buffer,strlen(buffer));
     if (n < 0) 

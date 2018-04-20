@@ -31,6 +31,30 @@ void client_error(const int codeErreur)
 		case 6:
 		  printf("Erreur lors de la lecture dans le socket");
 		  break;
+			
+		case 7:
+		  printf("Erreur lors de la lecture dans le socket");
+		  break;
+		
+		case 8:
+		  printf("Erreur lors de la lecture dans le socket");
+		  break;
+			
+		case 9:
+		  printf("Erreur lors de la lecture dans le socket");
+		  break;
+			
+		case 10:
+		  printf("Erreur lors de la lecture dans le socket");
+		  break;
+			
+		case 11:
+		  printf("Erreur lors de la lecture dans le socket");
+		  break;
+			
+		case 12:
+		  printf("Erreur lors de la lecture dans le socket");
+		  break;
 
 		default:
 		  printf("Code erreur %d non reconnu", codeErreur);
