@@ -1,4 +1,3 @@
-#include "server.h"
 #include "jeu.h"
 
 int tabValeur[17][17];
