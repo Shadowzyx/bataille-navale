@@ -53,14 +53,14 @@ void* communiquer(int sockfd, struct Strike *buffer)
     
 	void *receivingBuffer;
 
-    n = read(sockfd, buffer2, 255);
+    n = read(sockfd, receivingBuffer, 255);
     printf("Resultat de read %d\n",n);
     if (n < 0) {
          client_error(6);
 	}
 	
-	printf("%s\n",buffer);
-	return buffer;
+	return receivingBuffer;
+		
 }
 
 #endif
