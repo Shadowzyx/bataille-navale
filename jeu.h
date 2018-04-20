@@ -53,11 +53,11 @@ int positionBateau()
 void ViderTab(int(*tab)[17])
 {
 	for (int i = 0 ; i < 17 ; i++)
-        {
-                for (int j = 0 ; j < 17 ; j++)
-                {
-			tab[i][j] = 9;
-		}
+    {
+        	for (int j = 0 ; j < 17 ; j++)
+            {
+				tab[i][j] = 9;	// on met à 9 afin d'initialiser
+			}
 	}
 }
 
@@ -105,4 +105,3 @@ void AfficherTab(int(*tab)[17])
 }
 
 #endif
->>>>>>> modif affichage tableau
