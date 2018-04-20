@@ -1,4 +1,8 @@
-#include <error.h>
+#include "base.h"
+
+#ifndef ERROR_H
+#define ERROR_H
+
 
 int tabValeur[17][17];
 
@@ -32,3 +36,5 @@ void AfficherTab()
 		printf("%d/n", ligne);
 	}
 }
+
+#endif
