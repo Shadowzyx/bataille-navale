@@ -10,6 +10,6 @@ int main()
 {
 	/*connexion("localhost", 82);*/
 	printf("test");
-	EnregistrerPositionTab(1,1,0,tabValeur);
+	EnregistrerPositionTab(1,1,1,tabValeur);
 	AfficherTab(tabValeur);
 }

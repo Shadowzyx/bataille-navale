@@ -42,19 +42,19 @@ int positionBateau()
 
 void EnregistrerPositionTab(int positionX,int positionY,int touche, int(*tab)[17])
 {
-	printf("Tableau enregistrer1");
+	printf("Tableau enregistrer1\n");
 	tab[positionX][positionY] = touche;
-	printf("Tableau enregistrer2");
+	printf("Tableau enregistrer\n");
 } 
 
 void AfficherTab(int(*tab)[17])
 {
-	char *ligne;
+	char ligne[255];
 	char *valeurAff;
 
 	for (int i = 0 ; i < 17 ; i++)
 	{
-		ligne = "";
+		strcpy(ligne, "");
 		for (int j = 0 ; j < 17 ; j++)
         	{
 			if(tab[i][j] == 1)
@@ -66,11 +66,11 @@ void AfficherTab(int(*tab)[17])
 				valeurAff=" ";
 			}
 
-			strcat(ligne,valeurAff);
-			strcat(ligne,"|");
+			strcat(ligne, valeurAff);
+			strcat(ligne, "|");
 		}
 
-		printf("%s/n", ligne);
+		printf("%s\n", ligne);
 	}
 }
 
