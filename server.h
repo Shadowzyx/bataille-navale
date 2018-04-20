@@ -39,4 +39,20 @@ int connexion(char* hostname, int portno)
     return sockfd;
 }
 
+
+int envoi(int sockfd, int x, int y)
+{
+    n = write(sockfd,buffer,strlen(buffer));
+    if (n < 0) 
+         error("Erreur en écriture sur le socket");
+    
+    n = read(sockfd,buffer,255);
+    printf("Resultat de read %d\n",n);
+    if (n < 0) 
+         error("Erreur en lecture sur le socket");
+    printf("%s\n",buffer);
+    
+	return 1;
+}
+
 #endif

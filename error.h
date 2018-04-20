@@ -9,7 +9,7 @@ void client_error(const int codeErreur)
 	{
 
 		case 1:
-		  printf("Argument manquant dans l'appel de la fonction");
+		  printf("Usage : ./main hostname port");
 		  break;
 
 		case 2:
@@ -21,15 +21,15 @@ void client_error(const int codeErreur)
 		  break;
 
 		case 4:
-		  printf("Salut ado !");
+		  printf("Erreur lors de la connexion au serveur");
 		  break;
 
 		case 5:
-		  printf("Salut adulte !");
+		  printf("");
 		  break;
 
 		case 6:
-		  printf("Salut papy !");
+		  printf("");
 		  break;
 
 		default:
