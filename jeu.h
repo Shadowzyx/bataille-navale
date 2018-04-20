@@ -1,39 +1,40 @@
-#include "base.h"
+#include "server.h"
 
-#ifndef ERROR_H
-#define ERROR_H
+#ifndef JEU_H
+#define JEU_H
 
 
-int tabValeur[17][17];
-
-void EnregistrerPositionTab(char position,int touche)
+void EnregistrerPositionTab(int positionX,int positionY,int touche, int(*tab)[17])
 {
-	tabValeur[(int)position[0]][(int)position[1]] = touche;
+	printf("Tableau enregistrer1");
+	tab[positionX][positionY] = touche;
+	printf("Tableau enregistrer2");
 } 
 
-void AfficherTab()
+void AfficherTab(int(*tab)[17])
 {
-	char ligne;
-	char valeurAff = " ";
+	char *ligne;
+	char *valeurAff;
 
-	for (i = 0 ; i < 17 ; i++)
+	for (int i = 0 ; i < 17 ; i++)
 	{
 		ligne = "";
-		for (j = 0 ; j < 17 ; j++)
+		for (int j = 0 ; j < 17 ; j++)
         	{
-			if(tabValeur[i][j] == 1)
+			if(tab[i][j] == 1)
 			{
 				valeurAff = "x";
 			}
 			else
 			{
-				valeurAff = " ";
+				valeurAff=" ";
 			}
 
-			ligne = ligne + valeurAff + "|";
+			strcat(ligne,valeurAff);
+			strcat(ligne,"|");
 		}
 
-		printf("%d/n", ligne);
+		printf("%s/n", ligne);
 	}
 }
 
