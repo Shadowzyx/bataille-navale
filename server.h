@@ -44,14 +44,14 @@ s_outgoingMessage* communiquer(int sockfd, s_strike *buffer)
 {
 	int n;
 
-    n = write(sockfd,buffer,strlen(buffer));
+    n = write(sockfd, buffer, sizeof(s_strike));
     if (n < 0) {
 		client_error(5);
 	}
 
 	bzero(buffer,256);
     
-	void *receivingBuffer;
+	s_outgoingMessage *receivingBuffer;
 
     n = read(sockfd, receivingBuffer, 255);
     printf("Resultat de read %d\n",n);

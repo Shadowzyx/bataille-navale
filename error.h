@@ -35,26 +35,6 @@ void client_error(const int codeErreur)
 		case 7:
 		  printf("Position non valide");
 		  break;
-		
-		case 8:
-		  printf("");
-		  break;
-			
-		case 9:
-		  printf("");
-		  break;
-			
-		case 10:
-		  printf("");
-		  break;
-			
-		case 11:
-		  printf("");
-		  break;
-			
-		case 12:
-		  printf("");
-		  break;
 
 		default:
 		  printf("Code erreur %d non reconnu", codeErreur);
