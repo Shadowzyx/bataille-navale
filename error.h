@@ -37,6 +37,7 @@ void client_error(const int codeErreur)
 		  break;
 
 	}
+	printf("\n");
 	exit(codeErreur);
 }
 
