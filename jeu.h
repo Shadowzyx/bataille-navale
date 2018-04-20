@@ -61,14 +61,11 @@ void ViderTab(int(*tab)[17])
 	}
 }
 
-void EnregistrerPositionTab(int positionX,int positionY,int touche, int(*tab)[17])
+void EnregistrerPositionTab(int positionX, int positionY, char touche, int(*tab)[17])
 {
-	if( positionX > 17 || positionY > 17 ) 
-	{
+	if( positionX > 17 || positionY > 17 ) {
 		client_error(7);
-	}
-	else
-	{
+	} else{
 		tab[positionX][positionY] = touche;
 	}
 } 
@@ -102,6 +99,15 @@ void AfficherTab(int(*tab)[17])
 
 		printf("%s\n", ligne);
 	}
+}
+
+void initialize(int(*tab)[17], Player player)
+{
+	Boat b1 = player.boat1;
+	Boat b2 = player.boat2;
+
+	EnregistrerPositionTab(b1.x, b1.y, 'B', tab);
+	EnregistrerPositionTab(b2.x, b2.y, 'B', tab);
 }
 
 #endif

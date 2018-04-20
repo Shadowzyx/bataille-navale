@@ -2,16 +2,27 @@
 
 int tabValeur[17][17];
 
-/*
+char* pseudo;
+
 int main(int argc, char const *argv[])
-*/
-int main()
 {
-	/*connexion("localhost", 82);*/
-	ViderTab(tabValeur);
-	EnregistrerPositionTab(14,2,1,tabValeur);
-	EnregistrerPositionTab(15,4,0,tabValeur);
-	EnregistrerPositionTab(0,9,0,tabValeur);
-	EnregistrerPositionTab(1,1,1,tabValeur);
-	AfficherTab(tabValeur);
+	if (argc < 3) {
+		client_error(1);
+	}
+
+	int sockfd = connexion(argv[1], atoi(argv[2]));
+
+	s_outgoingMessage *message;
+
+	while(1) {
+		message = receive(sockfd);
+
+		if ((*message).typeMessage == 1) {
+			Player player = (*message).player;
+			pseudo = player.nickname;
+
+			Boat b1 = player.boat1;
+			Boat b2 = player.boat2;
+		}
+	}
 }

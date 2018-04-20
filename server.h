@@ -3,7 +3,7 @@
 #ifndef CONNECTION_H
 #define CONNECTION_H
 
-int connexion(char* hostname, int portno)
+int connexion(const char* hostname, int portno)
 {
 	int port = portno;
 	int sockfd = socket(AF_INET, SOCK_STREAM, 0);
@@ -40,7 +40,7 @@ int connexion(char* hostname, int portno)
 }
 
 
-s_outgoingMessage* communiquer(int sockfd, s_strike *buffer)
+bool send(int sockfd, s_strike *buffer)
 {
 	int n;
 
@@ -49,18 +49,19 @@ s_outgoingMessage* communiquer(int sockfd, s_strike *buffer)
 		client_error(5);
 	}
 
-	bzero(buffer,256);
-    
-	s_outgoingMessage *receivingBuffer;
+	return true;
+}
 
-    n = read(sockfd, receivingBuffer, 255);
-    printf("Resultat de read %d\n",n);
-    if (n < 0) {
-         client_error(6);
+s_outgoingMessage* receive(int sockfd)
+{
+	s_outgoingMessage* buffer;
+
+	int n = read(sockfd, buffer, sizeof(s_outgoingMessage));
+	if (n < 0) {
+		client_error(6);
 	}
-	
-	return receivingBuffer;
-		
+
+	return buffer;
 }
 
 #endif
