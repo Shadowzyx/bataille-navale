@@ -1,18 +1,23 @@
+#include "base.h"
+
+#ifndef ERROR_H
+#define ERROR_H
+
 void client_error(const int codeErreur)
 {
 	switch (codeErreur)
 	{
 
 		case 1:
-		  printf("Salut bebe !");
+		  printf("Argument manquant dans l'appel de la fonction");
 		  break;
 
 		case 2:
-		  printf("Salut gamin !");
+		  printf("Erreur lors de l'ouverture du socket");
 		  break;
 
 		case 3:
-		  printf("Salut jeune !");
+		  printf("Impossible de se connecter à l'hôte OU hôte inexistant");
 		  break;
 
 		case 4:
@@ -28,8 +33,12 @@ void client_error(const int codeErreur)
 		  break;
 
 		default:
-		  printf("Code erreur %s non reconnu", codeErreur);
+		  printf("Code erreur %d non reconnu", codeErreur);
 		  break;
 
 	}
+	exit(codeErreur);
 }
+
+
+#endif
