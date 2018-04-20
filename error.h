@@ -25,11 +25,11 @@ void client_error(const int codeErreur)
 		  break;
 
 		case 5:
-		  printf("");
+		  printf("Erreur lors de l'écriture dans le socket");
 		  break;
 
 		case 6:
-		  printf("");
+		  printf("Erreur lors de la lecture dans le socket");
 		  break;
 
 		default:
