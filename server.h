@@ -3,7 +3,7 @@
 #ifndef CONNECTION_H
 #define CONNECTION_H
 
-void connexion(char* hostname, int portno)
+int connexion(char* hostname, int portno)
 {
 	int port = portno;
 	int sockfd = socket(AF_INET, SOCK_STREAM, 0);

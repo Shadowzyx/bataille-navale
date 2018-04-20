@@ -2,5 +2,9 @@
 
 int main(int argc, char const *argv[])
 {
-	connexion("localhost", 82);
+	if (argc < 3) {
+		client_error(1);
+	}
+
+	int connect = connexion(argv[1], atoi(argv[2]));
 }
