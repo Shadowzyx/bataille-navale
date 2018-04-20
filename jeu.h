@@ -18,21 +18,22 @@ int positionbateau2;
 
 int positiondesbateaux[2];
 
-int positionBateau(){
+int positionBateau()
+{
+	printf("Saisir la position du premier bateau");
+	positionbateaux[0] = scanf("%s",positionbateau1);
+	
+	printf("Saisir la position du deuxième bateau");
+	positionbateaux[1] = scanf("%s",positionbateau2);
 
-printf("Saisir la position du premier bateau");
-positionbateaux[0] = scanf("%s",positionbateau1);
-printf("Saisir la position du deuxième bateau");
-positionbateaux[1] = scanf("%s",positionbateau2);
+	struct Strike positions;
 
-struct Strike positions;
+	positions.x = positionbateaux[0];
+	positions.y = positionbateaux[1];
 
-positions.x = positionbateaux[0];
-positions.y = positionbateaux[1];
+	envoi(sockfd, &positions);
 
-envoi(sockfd, &positions);
-
-return 0;
+	return 0;
 
 }
 
