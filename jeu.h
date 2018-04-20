@@ -1,4 +1,3 @@
-
 #include "server.h"
 
 #ifndef JEU_H
@@ -51,9 +50,27 @@ int positionBateau()
 
 }
 
-void EnregistrerPositionTab(int positionX, int positionY, int touche, int(*tab)[17])
+void ViderTab(int(*tab)[17])
 {
-	tab[positionX][positionY] = touche;
+	for (int i = 0 ; i < 17 ; i++)
+        {
+                for (int j = 0 ; j < 17 ; j++)
+                {
+			tab[i][j] = 9;
+		}
+	}
+}
+
+void EnregistrerPositionTab(int positionX,int positionY,int touche, int(*tab)[17])
+{
+	if( positionX > 17 || positionY > 17 ) 
+	{
+		client_error(7);
+	}
+	else
+	{
+		tab[positionX][positionY] = touche;
+	}
 } 
 
 void AfficherTab(int(*tab)[17])
@@ -70,9 +87,13 @@ void AfficherTab(int(*tab)[17])
 			{
 				valeurAff = "x";
 			}
+			else if(tab[i][j] == 0)
+			{
+				valeurAff = "O";
+			}
 			else
 			{
-				valeurAff=" ";
+				valeurAff = " ";
 			}
 
 			strcat(ligne, valeurAff);
@@ -84,3 +105,4 @@ void AfficherTab(int(*tab)[17])
 }
 
 #endif
+>>>>>>> modif affichage tableau
