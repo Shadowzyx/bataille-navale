@@ -33,27 +33,27 @@ void client_error(const int codeErreur)
 		  break;
 			
 		case 7:
-		  printf("Erreur lors de la lecture dans le socket");
+		  printf("Taille de tableau dépassée");
 		  break;
 		
 		case 8:
-		  printf("Erreur lors de la lecture dans le socket");
+		  printf("");
 		  break;
 			
 		case 9:
-		  printf("Erreur lors de la lecture dans le socket");
+		  printf("");
 		  break;
 			
 		case 10:
-		  printf("Erreur lors de la lecture dans le socket");
+		  printf("");
 		  break;
 			
 		case 11:
-		  printf("Erreur lors de la lecture dans le socket");
+		  printf("");
 		  break;
 			
 		case 12:
-		  printf("Erreur lors de la lecture dans le socket");
+		  printf("");
 		  break;
 
 		default:
