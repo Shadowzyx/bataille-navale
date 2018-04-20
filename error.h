@@ -33,7 +33,7 @@ void client_error(const int codeErreur)
 		  break;
 			
 		case 7:
-		  printf("Taille de tableau dépassée");
+		  printf("Position non valide");
 		  break;
 		
 		case 8:
