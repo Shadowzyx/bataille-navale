@@ -35,7 +35,7 @@ struct SuccessfullStrike {
 // le type message définit ce qu'il faut lire dans la struct envoyé
 
 // typeMessage | description            | [ type ] |
-// 0 :         | En attente connection   | [ char genericMessage[255]; ] ( "En attente de connection n joueurs" )
+// 0 :         | En attente connection  | [ char genericMessage[255]; ] ( "En attente de connection n joueurs" )
 // 1 :         | Connection établie     | [ Player player ] ( Confirme la connexion, envoie de la position des bateaux )
 // 2 :         | Début de partie        | [ void ] ( Tous les joueurs sont prêts )
 // 3 :         | Début de tour          | [ void ] ( Notification du début du tour )
