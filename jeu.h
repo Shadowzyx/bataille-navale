@@ -13,25 +13,28 @@ Fonctionnalité à faire :
 */
 
 
-int positionbateau1;
-int positionbateau2;
+int *positionbateau1;
+int *positionbateau2;
 
 int positiondesbateaux[2];
 
 int positionBateau()
 {
+	// Static datas, change it when including this function in main :)
+	int sockfd = connexion("localhost", 82);
+
 	printf("Saisir la position du premier bateau");
-	positionbateaux[0] = scanf("%s",positionbateau1);
+	positiondesbateaux[0] = scanf("%d",positionbateau1);
 	
 	printf("Saisir la position du deuxième bateau");
-	positionbateaux[1] = scanf("%s",positionbateau2);
+	positiondesbateaux[1] = scanf("%d",positionbateau2);
 
 	struct Strike positions;
 
-	positions.x = positionbateaux[0];
-	positions.y = positionbateaux[1];
+	positions.x = positiondesbateaux[0];
+	positions.y = positiondesbateaux[1];
 
-	envoi(sockfd, &positions);
+	communiquer(sockfd, (void *)&positions);
 
 	return 0;
 
