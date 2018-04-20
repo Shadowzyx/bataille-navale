@@ -9,7 +9,7 @@ void client_error(const int codeErreur)
 	{
 
 		case 1:
-		  printf("Argument manquant dans l'appel de la fonction");
+		  printf("Usage : ./main hostname port");
 		  break;
 
 		case 2:
@@ -21,15 +21,39 @@ void client_error(const int codeErreur)
 		  break;
 
 		case 4:
-		  printf("Salut ado !");
+		  printf("Erreur lors de la connexion au serveur");
 		  break;
 
 		case 5:
-		  printf("Salut adulte !");
+		  printf("Erreur lors de l'écriture dans le socket");
 		  break;
 
 		case 6:
-		  printf("Salut papy !");
+		  printf("Erreur lors de la lecture dans le socket");
+		  break;
+			
+		case 7:
+		  printf("Erreur lors de la lecture dans le socket");
+		  break;
+		
+		case 8:
+		  printf("Erreur lors de la lecture dans le socket");
+		  break;
+			
+		case 9:
+		  printf("Erreur lors de la lecture dans le socket");
+		  break;
+			
+		case 10:
+		  printf("Erreur lors de la lecture dans le socket");
+		  break;
+			
+		case 11:
+		  printf("Erreur lors de la lecture dans le socket");
+		  break;
+			
+		case 12:
+		  printf("Erreur lors de la lecture dans le socket");
 		  break;
 
 		default:
@@ -37,6 +61,7 @@ void client_error(const int codeErreur)
 		  break;
 
 	}
+	printf("\n");
 	exit(codeErreur);
 }
 

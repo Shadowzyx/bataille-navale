@@ -6,6 +6,7 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <netdb.h> 
+#include "message.h"
 
 #ifndef BASE_H
 #define BASE_H

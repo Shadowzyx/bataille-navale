@@ -39,4 +39,24 @@ int connexion(char* hostname, int portno)
     return sockfd;
 }
 
+
+void communiquer(int sockfd, char *buffer)
+{
+    n = write(sockfd,buffer,strlen(buffer));
+    if (n < 0) 
+	{
+		client_error(5);
+	}
+	bzero(buffer,256);
+    n = read(sockfd,buffer,255);
+    printf("Resultat de read %d\n",n);
+    if (n < 0) 
+	{
+         client_error(6);
+	}
+	printf("%s\n",buffer);
+    
+	return buffer;
+}
+
 #endif
