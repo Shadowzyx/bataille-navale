@@ -40,7 +40,7 @@ int connexion(char* hostname, int portno)
 }
 
 
-void* communiquer(int sockfd, struct Strike *buffer)
+s_outgoingMessage* communiquer(int sockfd, s_strike *buffer)
 {
 	int n;
 
