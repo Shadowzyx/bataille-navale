@@ -40,10 +40,10 @@ int connexion(char* hostname, int portno)
 }
 
 
-void* communiquer(int sockfd, char *buffer)
+void* communiquer(int sockfd, struct Strike *buffer)
 {
 	int n;
-    
+
     n = write(sockfd,buffer,strlen(buffer));
     if (n < 0) {
 		client_error(5);
@@ -51,7 +51,9 @@ void* communiquer(int sockfd, char *buffer)
 
 	bzero(buffer,256);
     
-    n = read(sockfd,buffer,255);
+	void *receivingBuffer;
+
+    n = read(sockfd, buffer2, 255);
     printf("Resultat de read %d\n",n);
     if (n < 0) {
          client_error(6);

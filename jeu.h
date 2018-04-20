@@ -40,11 +40,9 @@ int positionBateau()
 
 }
 
-void EnregistrerPositionTab(int positionX,int positionY,int touche, int(*tab)[17])
+void EnregistrerPositionTab(int positionX, int positionY, int touche, int(*tab)[17])
 {
-	printf("Tableau enregistrer1\n");
 	tab[positionX][positionY] = touche;
-	printf("Tableau enregistrer\n");
 } 
 
 void AfficherTab(int(*tab)[17])
