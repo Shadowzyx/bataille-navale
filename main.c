@@ -12,7 +12,9 @@ int main(int argc, char const *argv[])
 
 	int sockfd = connexion(argv[1], atoi(argv[2]));
 
-	s_outgoingMessage *message;
+	write(sockfd, "Bonjour hahaha", 255);
+
+	OutgoingMessage *message;
 
 	while(1) {
 		message = receive(sockfd);

@@ -33,7 +33,10 @@ int positionBateau()
 	positions.x = positiondesbateaux[0];
 	positions.y = positiondesbateaux[1];		
 	
-	s_outgoingMessage* buffer = communiquer(sockfd, (void *)&positions);
+	if (x_send(sockfd, &positions)) {
+		OutgoingMessage *response = receive(sockfd);
+	}
+
 // le type message définit ce qu'il faut lire dans la struct envoyé
 // typeMessage | description            | [ type ] |
 // 0 :         | En attente connection  | [ char genericMessage[255]; ] ( "En attente de connection n joueurs" )
@@ -73,7 +76,7 @@ void EnregistrerPositionTab(int positionX, int positionY, char touche, int(*tab)
 void AfficherTab(int(*tab)[17])
 {
 	char ligne[255];
-	char *valeurAff;
+	char const *valeurAff;
 
 	for (int i = 0 ; i < 17 ; i++)
 	{
@@ -101,13 +104,15 @@ void AfficherTab(int(*tab)[17])
 	}
 }
 
-void initialize(int(*tab)[17], Player player)
+void initialize(int(*tab)[17], Player player, char *pseudo)
 {
 	Boat b1 = player.boat1;
 	Boat b2 = player.boat2;
 
 	EnregistrerPositionTab(b1.x, b1.y, 'B', tab);
 	EnregistrerPositionTab(b2.x, b2.y, 'B', tab);
+
+	pseudo = player.nickname;
 }
 
 #endif

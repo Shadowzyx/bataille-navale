@@ -42,7 +42,7 @@ struct SuccessfulStrike {
 struct OutgoingMessage {
     int typeMessage;
     char genericMessage[255];
-    s_player player;
+    Player player;
     char nickname[255];
     SuccessfulStrike strikes[15];
     Player eliminatedPlayers[15];

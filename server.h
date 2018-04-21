@@ -40,11 +40,11 @@ int connexion(const char* hostname, int portno)
 }
 
 
-bool send(int sockfd, s_strike *buffer)
+bool x_send(int sockfd, Strike *buffer)
 {
 	int n;
 
-    n = write(sockfd, buffer, sizeof(s_strike));
+    n = write(sockfd, buffer, sizeof(Strike));
     if (n < 0) {
 		client_error(5);
 	}
@@ -52,16 +52,16 @@ bool send(int sockfd, s_strike *buffer)
 	return true;
 }
 
-s_outgoingMessage* receive(int sockfd)
+OutgoingMessage* receive(int sockfd)
 {
-	s_outgoingMessage* buffer;
+	OutgoingMessage *message= malloc(sizeof(OutgoingMessage));
 
-	int n = read(sockfd, buffer, sizeof(s_outgoingMessage));
+	int n = read(sockfd, message, sizeof(OutgoingMessage));
 	if (n < 0) {
 		client_error(6);
 	}
 
-	return buffer;
+	return message;
 }
 
 #endif
