@@ -2,7 +2,7 @@
 
 int tabValeur[17][17];
 
-char* pseudo;
+Player me;
 
 int main(int argc, char const *argv[])
 {
@@ -20,11 +20,51 @@ int main(int argc, char const *argv[])
 		message = receive(sockfd);
 
 		if ((*message).typeMessage == 1) {
-			Player player = (*message).player;
+			me = (*message).player;
 			pseudo = player.nickname;
 
 			Boat b1 = player.boat1;
 			Boat b2 = player.boat2;
 		}
+		if ((*message).typeMessage == 3) {
+			Strike *strike;
+			
+			printf("Entrez X");
+			scanf("%i",(*strike).x);
+			printf("Entrez Y");
+			scanf("%i",(*strike).Y);
+			
+			(*strike).player = me;
+			
+			x_send(sockfd, Strike *strike);
+		}
+		
+		if ((*message).typeMessage == 4){
+			prntf("Joueur touché : " + (*message).nickPlayerTo)	
+		}
+		
+		
+		if ((*message).typeMessage == 6){
+			printf("A joué :" + (*message).nickname);			
+			EnregistrerPositionTab((*message).strike.x, (*message).stricke.y, 1,tabValeur);
+		}
+		
+		
+		if ((*message).typeMessage == 7){
+			prntf("Joueur touché : " + (*message).nickPlayerTo);
+			int compteur;
+			for (compteur = 0 ; compteur < 15 ; compteur++){
+				if((*message).eliminatedPlayers[compteur].nickname <> ''){
+					prntf("Joueur eliminés : " + (*message).eliminatedPlayers[compteur].nickname);
+				}
+			}
+		}
+		
+		if ((*message).typeMessage == 8){
+			prntf("Vainceur : " + (*message).nickname);
+		}
+		
+		
+		
 	}
 }
